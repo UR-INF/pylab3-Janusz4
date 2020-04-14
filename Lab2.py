@@ -58,3 +58,28 @@ def histogram(nazwa):
     c = collections.Counter(text)
     return c
 print(histogram("document.txt"))
+
+# Zadanie 6. Napisz następujące funkcje niezbędne do implementacji gry w pokera pięciokartowego dobieranego
+def deck():
+    deck = [
+        "('2','c')", "('3','c')", "('4','c')", "('5','c')", "('6','c')", "('7','c')", "('8','c')", "('9','c')", "('10','c')", "('J','c')", "('D','c')", "('K','c')", "('A','c')",
+        "('2','d')", "('3','d')", "('4','d')", "('5','d')", "('6','d')", "('7','d')", "('8','d')", "('9','d')", "('10','d')", "('J','d')", "('D','d')", "('K','d')", "('A','d')",
+        "('2','h')", "('3','h')", "('4','h')", "('5','h')", "('6','h')", "('7','h')", "('8','h')", "('9','h')", "('10','h')", "('J','h')", "('D','h')", "('K','h')", "('A','h')",
+        "('2','s')", "('3','s')", "('4','s')", "('5','s')", "('6','s')", "('7','s')", "('8','s')", "('9','s')", "('10','s')", "('J','s')", "('D','s')", "('K','s')", "('A','s')",
+    ]
+    return deck
+
+def shuffle_deck(deck):
+    random.shuffle(deck)
+    return deck
+
+def deal(deck, n):
+    l = []
+    for i in range(n):
+        l.append(deck[i:5*n:n])
+    return l
+
+lista = deal(deck(),3)
+print(lista[0])
+print(lista[1])
+print(lista[2])
