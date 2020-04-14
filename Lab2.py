@@ -48,3 +48,13 @@ def fun():
     return tab
 
 print(fun())
+
+# Zadanie 5. Napisz funkcję, która jako parametr przyjmuje lokalizację pliku tekstowego który zawiera dowolny tekst i zwraca histogram znaków występujących w tym napisie (czyli pary znak-liczba wystąpień). Wynikiem powinien być słownik.
+import collections
+
+def histogram(nazwa):
+    plik = open(nazwa,"r")
+    text = plik.readline()
+    c = collections.Counter(text)
+    return c
+print(histogram("document.txt"))
