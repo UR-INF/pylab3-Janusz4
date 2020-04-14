@@ -34,3 +34,17 @@ while i < len(tab):
 
 plik.close()
 
+# Zadanie 4, Napisz funkcję tworzącą tablicę dwuwymiarową (5x5) która zostanie wypełniona kwadratami liczb z komórek z wiersza wcześniejszego. Pierwszy wiersz wypełniony wartościami 2,3,4,5,6. Do utworzenia tablicy dwuwymiarowej wykorzystaj bibiotekę NumPy.
+import numpy as np
+
+def fun():
+    tab = np.array(
+        [[2, 3, 4, 5, 6], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])  # tworzenie tablicy 5x5
+    i = 1
+    while i < 5:
+        for j in range(5):
+            tab[i][j] = pow(tab[i - 1][j], 2)                                                   # wypełnianie tablicy
+        i += 1
+    return tab
+
+print(fun())
